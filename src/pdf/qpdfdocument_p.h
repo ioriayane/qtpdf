@@ -49,7 +49,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class QPdfMutexLocker : public QMutexLocker
+class QPdfMutexLocker : public QMutexLocker<QRecursiveMutex>
 {
 public:
     QPdfMutexLocker();

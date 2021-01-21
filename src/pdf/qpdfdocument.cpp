@@ -47,11 +47,11 @@
 QT_BEGIN_NAMESPACE
 
 // The library is not thread-safe at all, it has a lot of global variables.
-Q_GLOBAL_STATIC_WITH_ARGS(QMutex, pdfMutex, (QMutex::Recursive));
+Q_GLOBAL_STATIC(QRecursiveMutex, pdfMutex);
 static int libraryRefCount;
 
 QPdfMutexLocker::QPdfMutexLocker()
-    : QMutexLocker(pdfMutex())
+    : QMutexLocker<QRecursiveMutex>(pdfMutex())
 {
 }
 

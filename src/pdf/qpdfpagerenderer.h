@@ -38,6 +38,7 @@
 #define QPDFPAGERENDERER_H
 
 #include "qtpdfglobal.h"
+#include "qpdfdocument.h"
 
 #include <QObject>
 #include <QPdfDocumentRenderOptions>
